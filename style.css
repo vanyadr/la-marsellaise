@@ -343,6 +343,7 @@ header.scrolled {
 header.scrolled .header {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
+    align-items: center;
 }
 
 @media (max-width: 1800px) {
@@ -394,6 +395,11 @@ header.scrolled .header {
     }
 }
 
+.header__link:hover,
+.header__contact-link:hover {
+    color: #b89367;
+}
+
 .header__link,
 .header__contact-link {
     display: block;
@@ -401,6 +407,7 @@ header.scrolled .header {
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 400;
+    transition: color 0.2s;
 }
 
 @media (max-width: 1800px) {
@@ -797,5 +804,204 @@ header.scrolled .header {
 
     .menu__item.last {
         grid-column: 1/-1;
+    }
+}
+
+/* Блок События */
+.events .title {
+    cursor: pointer;
+    transition: color 0.2s;
+    margin-bottom: 0;
+}
+
+.events .title:hover {
+    color: #b89367;
+}
+
+.swiper-events, .swiper-sales {
+    overflow: hidden;
+    padding: 2rem 0 4rem;
+}
+
+
+.events__slider {
+    position: relative;
+    padding: 0 calc(2.4rem + 24px);
+    display: none;
+}
+
+.events__slider.active {
+    display: block;
+}
+
+.events__btns {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4rem;
+    justify-content: center;
+}
+
+.events__btns .title.active {
+    color: #b89367;
+    border-bottom: 2px solid #b89367;
+    padding-bottom: .5rem;
+}
+
+.events__slider .events__btn.swiper-button-prev,
+.events__slider .events__btn.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.7rem;
+    margin: 0;
+    z-index: 0;
+    border-radius: 12px;
+    background: rgba(184, 147, 103, 0.2);
+    border: 1px solid rgba(184, 147, 103, 0.5);
+}
+
+.events__btn .swiper-navigation-icon {
+    display: none;
+}
+
+.events__slider .events__btn.swiper-button-next {
+    left: auto;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.events__slider .events__btn.swiper-button-prev {
+    right: auto;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.events__slider .events__btn.swiper-button-next img {
+    transform: rotate(180deg);
+}
+
+.events__slider .events__btn.swiper-button-next.swiper-button-disabled,
+.events__slider .events__btn.swiper-button-prev.swiper-button-disabled {
+    opacity: .6;
+}
+
+.events__slide-holder {
+    border-radius: 0.6rem;
+    background: rgba(203, 203, 204, 0.2);
+    display: grid;
+    grid-template-rows: 10rem 7rem;
+    gap: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.1);
+}
+
+.events__img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.events__img img {
+    object-fit: cover;
+}
+
+.events__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0 .6rem .6rem;
+}
+
+.events__name {
+    font-weight: 700;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.events__description {
+    font-size: 0.7rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.events__footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.events__date,
+.events__link {
+    font-size: 0.7rem;
+    color: #b89367;
+    display: block;
+}
+
+.events__link:hover,
+.events__link:visited {
+    text-decoration: underline;
+}
+
+.events__link {
+    text-decoration: underline;
+    text-underline-offset: 0.15rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1800px) {
+    .events__slide-holder {
+        grid-template-rows: 10rem 10rem;
+    }
+}
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1024px) {
+    .swiper-events, .swiper-sales {
+        padding: 1.2rem 0;
+    }
+
+    .events__btns .title.active {
+        padding-bottom: .4rem;
+    }
+
+    .events__slide-holder {
+        grid-template-rows: 10rem 7rem;
+    }
+
+    .events__name {
+        font-size: .7rem;
+    }
+
+    .events__description {
+        font-size: 0.6rem;
+    }
+
+    .events__date,
+    .events__link {
+        font-size: 0.6rem;
+
+    }
+
+    .events__slider .events__btn.swiper-button-prev,
+    .events__slider .events__btn.swiper-button-next {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.5rem;
+    }
+
+    .events__slider {
+        padding: 0 calc(2rem + 12px);
+    }
+}
+
+@media (max-width: 769px) {
+    .events__slide-holder {
+        grid-template-rows: 10rem 10rem;
     }
 }
