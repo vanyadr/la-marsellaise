@@ -1618,3 +1618,208 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Страница события */
+.singleEvent {
+    padding-top: 6rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    row-gap: 3rem;
+    position: relative;
+}
+
+.singleEvent__img {
+    grid-column: 2 / 6;
+    border: 1px solid rgba(203, 203, 204, 1);
+    aspect-ratio: 1/1;
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+
+.singleEvent__img img {
+    object-fit: cover;
+}
+
+.singleEvent__content {
+    grid-column: 7 / 12;
+}
+
+.singleEvent__subtitle {
+    font-size: .8rem;
+    line-height: 170%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 0.6rem;
+}
+
+.singleEvent__title {
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 170%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.singleEvent__info {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.4rem;
+}
+
+.singleEvent__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.singleEvent__item {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.singleEvent__icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.singleEvent__param {
+    font-size: .8rem;
+    line-height: 170%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+.singleEvent__book.btn:hover {
+    background: rgba(184, 147, 103, 0.5);
+}
+
+.singleEvent__book.btn {
+    border: 1px solid rgba(184, 147, 103, 1);
+    border-radius: 0.6rem;
+    padding: 1rem 2.4rem;
+    background: rgba(184, 147, 103, 0.2);
+    font-weight: 400;
+    font-size: .7rem;
+    color: #8e704c;
+    transition: background-color .2s;
+}
+
+.singleEvent__description {
+    font-size: .8rem;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+}
+
+@media (max-width: 1800px) {
+    .singleEvent {
+        padding-top: 5rem;
+    }
+
+    .singleEvent__img {
+        grid-column: 1 / 6;
+    }
+
+    .singleEvent__content {
+        grid-column: 7 / -1;
+    }
+}
+
+@media (max-width: 1400px) {
+    .singleEvent__content {
+        grid-column: 6 / -1;
+    }
+
+    .singleEvent__subtitle {
+        font-size: .6rem;
+    }
+
+    .singleEvent__title {
+        font-size: .8rem;
+    }
+
+    .singleEvent__icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .singleEvent__param {
+        font-size: .6rem;
+    }
+
+    .singleEvent__description {
+        font-size: .6rem;
+    }
+
+    .singleEvent__book.btn {
+        font-size: .6rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 0.4rem;
+        row-gap: 3rem;
+    }
+
+    .singleEvent {
+        padding-top: 4rem;
+    }
+
+    .singleEvent__img {
+        grid-column: 1 / 4;
+    }
+
+    .singleEvent__content {
+        grid-column: 4 / -1;
+    }
+
+    .singleEvent__book.btn {
+        padding: 0.6rem 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.4rem;
+        row-gap: 2rem;
+    }
+
+    .singleEvent {
+        padding-top: 3rem;
+    }
+
+    .singleEvent__img {
+        grid-column: 1 / -1;
+        aspect-ratio: 1.5/1;
+    }
+
+    .singleEvent__content {
+        grid-column: 1 / -1;
+    }
+
+    .singleEvent__book.btn:hover {
+        background: rgba(184, 147, 103, 0.2);
+    }
+
+    .singleEvent__book.btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .singleEvent__info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
