@@ -1624,7 +1624,7 @@ footer {
     padding-top: 6rem;
 }
 
-.grid {
+.EventGrid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
